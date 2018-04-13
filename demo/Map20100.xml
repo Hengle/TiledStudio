@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node type="aseq">
+         <Node type="fseq">
+		<Node type="con" condition="MapTriggerOn,3" />
+		<Node type="act" action="MapEnableMonsterZone,17"/>
+                <Node type="act" action="MapDisableTriggerZone,3"/>
+                <Node type="act" action="MapEnableTriggerZone,4"/>
+         </Node>
+         <Node type="fseq">
+                <Node type="con" condition="MapTriggerOn,4" />
+                <Node type="act" action="MapEnableMonsterZone,23" />
+                <Node type="act" action="MapDisableTriggerZone,4"/>
+         </Node>
+         <Node type="fseq">      
+                <Node type="con" condition="MapTriggerOn,1"/>
+                <Node type="act" action="MapCallMagic,203005,58,56"/>
+                <Node type="act" action="MapDisableSceneObject,1"/>
+         </Node>
+         <Node type="fseq"> 
+                <Node type="con" condition="MapTriggerOn,2"/>
+                <Node type="act" action="MapCallMagic,203005,78,39"/>
+                <Node type="act" action="MapDisableSceneObject,2"/>
+         </Node> 
+         <Node type="fseq">
+                <Node type="con" condition="MapMonsterZoneClean,17" />
+		<Node type="con" condition="MapMonsterZoneEnabled,17" />
+                <Node type="act" action="MapEnableMonsterZone,18" />  
+                <Node type="act" action="MapEnableMonsterZone,19" />
+                <Node type="act" action="MapEnableMonsterZone,20" />
+                <Node type="act" action="MapEnableMonsterZone,21" />
+                <Node type="act" action="MapEnableMonsterZone,22" />
+                <Node type="act" action="MapEnableTriggerZone,5" />
+		<Node type="act" action="MapDisableMonsterZone,17" />
+          </Node>
+          <Node type="fseq">
+                <Node type="con" condition="MapTriggerOn,5" />
+                <Node type="act" action="MapVictory"/> 
+         </Node> 
+</Node>

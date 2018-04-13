@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Node type="fseq">
+        <Node type="act" condition="MonsterHPCD,10" action="MonsterRecoverHP"/>
+        <Node type="con" condition="MonsterSeeRole"/>
+        <Node type="not">
+            <Node type="con" condition="MonsterIsMoving"/>
+        </Node>
+        <Node type="not">
+            <Node type="con" condition="MonsterBuff,0"/>
+        </Node>
+        <Node type="aseq">
+            <Node type="act" condition="MonsterViewCD,1,2" action="MonsterView"/>
+            <Node type="act" condition="MonsterSeekCD,1,5" action="MonsterSeek"/>
+        </Node>
+        <Node type="bsel" condition="MonsterLockObject">
+            <Node type="bsel" bselect="false" condition="MonsterAtBirthPos">
+                <Node type="act" bselect="false" action="MonsterReturn"/>
+                <Node type="act" bselect="true" action="MonsterWondering,0.1"/>
+            </Node>
+            <Node type="bsel" bselect="true" condition="MonsterInAttackRange">
+                <Node type="act" bselect="true"  action="MonsterAttack"/>
+                <Node type="act" bselect="false" condition="MonsterInPursuitRange" action="MonsterPursuit"/>
+            </Node>
+        </Node>
+</Node>
